@@ -1,0 +1,46 @@
+﻿/*.map rect[id^=rect_] {
+    fill: none;
+    fill-opacity: 1;
+    fill-rule: evenodd;
+    stroke: #00008b;
+    stroke-width: 0.262745;
+    stroke-opacity: 0.954023;
+    pointer-events: all;
+}*/
+
+/*svg.map rect {
+    fill: none;
+    fill-opacity: 1;
+    fill-rule: evenodd;
+    stroke: #00008b;
+    stroke-width: 0.262745;
+    stroke-opacity: 0.954023;
+    fill: none;
+    pointer-events: all;
+}*/
+
+
+/*.map text {
+    font-family: "Verdana";
+    font-size: 3px;
+    fill: black;
+    pointer-events: none;
+    
+}*/
+
+.map {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+    .map rect.auditory-occupied {
+        fill: rgba(255, 180, 126, 1);
+        pointer-events: all;
+    }
+
+.map rect[id^=rect_]:not(.auditory-occupied):hover {
+    fill: rgba(144, 126, 255, 0.43);
+    pointer-events: all;
+}
+

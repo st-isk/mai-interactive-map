@@ -1,0 +1,52 @@
+﻿@page "/{number}"
+
+<div class="container">
+    <header>
+        <div class="row align-items-center">
+            <div class="col-12 text-center">
+                Статус аудитории №@Number
+            </div>
+        </div>
+    </header>
+    <main>
+        @for (int k = 0; k < timetbl_start.Length; k++)
+        {
+            var is_occ = isOccupied(timetbl_start[k]);
+            <div class="row" style="border-right: 3px solid rgba(0, 148, 217, 1); border-left: 3px solid rgba(0, 148, 217, 1); border-bottom: 3px solid rgba(0, 148, 217, 1); margin-left: 0px; margin-right: 0px ">
+                <div class="col">
+                    @if (is_occ)
+                    {
+                        <div class="status-indicator" style="background-color: rgba(255, 180, 126, 1)" />
+                    }
+                    else
+                    {
+                        <div class="status-indicator" />
+                    }
+                </div>
+                <div class="col text-center align-self-center">
+                    @timetbl_start[k] - @timetbl_fin[k]
+                </div>
+                <div class="col text-center align-self-center">
+                    @if (is_occ)
+                    {
+                        <span>Аудитория занята</span>
+                    }
+                    else
+                    {
+                        <span>Аудитория свободна</span>
+                    }
+                </div>
+                <div class="col text-center" style="margin-top: 4px; margin-bottom: 4px">
+                    @if (is_occ)
+                    {
+                        <button disabled type="button" class="btn btn-outline-primary">Забронировать</button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn btn-outline-primary">Забронировать</button>
+                    }
+                </div>
+            </div>
+        }
+    </main>
+</div>

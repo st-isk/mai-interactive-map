@@ -1,0 +1,51 @@
+﻿@page "/"
+
+
+<div class="row">
+    <div class="col-12 text-center">
+        ГУК, Этаж @floor
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-right">
+        <button type="button" class="btn btn-outline-primary" @onclick="(() => { if (floor < 6) floor++; })"><i class="fa-solid fa-angle-up"></i></button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-right">
+        <span class="mr-1">Этаж</span>
+        <button type="button" class="btn btn-outline-primary">@floor</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-right">
+        <button type="button" class="btn btn-outline-primary" @onclick="(() => { if (floor > 2) floor--; })"><i class="fa-solid fa-angle-down"></i></button>
+    </div>
+</div>
+
+@switch (floor) {
+    case 2:
+        <Floor4/>;
+        break;
+    case 3:
+        <Floor4/>;
+        break;
+    case 4:
+        <Floor4/>;
+        break;
+    case 5:
+        <Floor5/>;
+        break;
+    case 6:
+        <Floor4/>;
+        break;
+}
+
+<div class="row">
+    <div class="col-12 text-right">
+        <button type="button" class="btn btn-outline-primary">Масштаб</button>
+    </div>
+</div>
